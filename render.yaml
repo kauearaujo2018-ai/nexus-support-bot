@@ -1,0 +1,17 @@
+services:
+  - type: worker
+    name: nexus-support-bot
+    env: docker
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: BOT_TOKEN
+        sync: false
+      - key: BOT_API_KEY
+        sync: false
+      - key: API_URL
+        value: https://nexus-support-hub.base44.app/functions/bot-sync
+      - key: GUILD_ID
+        sync: false
